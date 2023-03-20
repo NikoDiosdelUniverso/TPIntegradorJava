@@ -23,9 +23,6 @@ public class Partido {
     Equipo equipo2 = new Equipo(idEquipo2, nombreEquipo2);
 
 
-public String getPartido() {
-    return "Partido numero " + this.id + ":" + this.equipo1 + " vs " + this.equipo2;
-}
     //compara los puntajes de los equipos y devuelve el ganador
     public int Ganador() {
         if (golesEquipo1 > golesEquipo2) {
