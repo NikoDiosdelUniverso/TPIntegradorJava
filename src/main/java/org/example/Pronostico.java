@@ -1,20 +1,25 @@
 package org.example;
 
-import com.opencsv.bean.CsvBindByName;
 
 public class Pronostico {
-    @CsvBindByName(column = "id partido")
+
     private int id;
 
-    @CsvBindByName(column = "Equipo 1", required = true)
     private int idEquipo1;
 
-    @CsvBindByName(column = "Ganador", required = true)
     private int idGanador;
-    @CsvBindByName(column = "Equipo 2", required = true)
+
     private int idEquipo2;
 
-    Partido partido;
+    private Partido partido;
+
+    public Pronostico(Partido partido, int ganador){
+        this.id = partido.getId();
+        this.partido = partido;
+        this.idEquipo1 = partido.getIdEquipo1();
+        this.idEquipo2 = partido.getIdEquipo2();
+        this.idGanador = ganador;
+    }
 
     //suma un punto por cada pronostico acertado
     public int Puntos(){
@@ -23,5 +28,21 @@ public class Pronostico {
             puntos += 1;
         }
         return puntos;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getIdEquipo1() {
+        return idEquipo1;
+    }
+
+    public int getIdGanador() {
+        return idGanador;
+    }
+
+    public int getIdEquipo2() {
+        return idEquipo2;
     }
 }
