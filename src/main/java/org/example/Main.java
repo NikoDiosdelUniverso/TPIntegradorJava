@@ -8,33 +8,33 @@ import java.util.List;
 
 public class Main {
 
-    private static Partido buscarPartidoPorId(Collection<Partido> partidos, int id) {
-        for (Partido partido : partidos) {
+    private static Partido buscarPartidoPorId(Collection<Partido> partidos, int id) { // metodo que busca partido por id
+        for (Partido partido : partidos) { // Partido = clase , partido = elemento : partidos = lista -> por cada partido de partidos hacer
             if (partido.getId() == id) {
                 return partido;
             }
         }
-        throw new IllegalArgumentException("No se encontró ninguna partido con el id " + id);
+        throw new IllegalArgumentException("No se encontró ninguna partido con el id " + id); // si no encuentra el partido
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException { // main que se ejecuta
 
         // Verificar si se ingresó un archivo como argumento
         if (args.length == 0) {
             throw new RuntimeException("ERROR: No ingresaste ningún archivo como argumento");
         }
 
-        List<Partido> listaDePartidos = new ArrayList<>();
-        List<Pronostico> listaDePronosticos = new ArrayList<>();
+        List<Partido> listaDePartidos = new ArrayList<>(); // crea lista de partidos vacia
+        List<Pronostico> listaDePronosticos = new ArrayList<>(); // crea lista de pronostico vacia
 
         // Leer el archivo de resultados
         BufferedReader reader1 = new BufferedReader(new FileReader(args[0]));
-        reader1.readLine();
+        reader1.readLine(); // ignora el encabezado
         String linea;
 
         while ((linea = reader1.readLine()) != null) {
             String[] partes = linea.split(",");
-            int id = Integer.parseInt(partes[0]);
+            int id = Integer.parseInt(partes[0]); // se usa integer pq todo lo que se lee es string, transforma el string en un int
             int idEquipo1 = Integer.parseInt(partes[1]);
             String nombreEquipo1 = partes[2];
             int golesEquipo1 = Integer.parseInt(partes[3]);
