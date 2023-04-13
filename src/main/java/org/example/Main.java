@@ -2,8 +2,7 @@ package org.example;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+
 
 
 public class Main {
@@ -18,6 +17,7 @@ public class Main {
         LectorDeArchivos lector = new LectorDeArchivos(args[0], args[1]); // creando instancia de la clase "lector de archivos"
 
         ArrayList<Ronda> listaDeRondas = lector.leerResultados(); // usando el método leer resultados
+
         ArrayList<Persona> listaDePersonas = new ArrayList<>(); // creando una lista de personas vacía
 
         for (Ronda ronda : listaDeRondas) { // por cada ronda de la lista rondas
@@ -32,8 +32,7 @@ public class Main {
         }
 
         for (Persona persona : listaDePersonas) { // por cada persona de la lista personas
-            System.out.printf(persona.getNombre(), " : ", persona.getPuntaje()); // muestra el nombre de la persona con su respectivo puntaje
-
+            System.out.println(persona.getNombre() + " : " + persona.getPuntaje()); // muestra el nombre de la persona con su respectivo puntaje
         }
     }
 }

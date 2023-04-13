@@ -30,7 +30,7 @@ public class Pronostico {
         return puntos;
     }
 
-    public int getId() {
+/*    public int getId() {
         return id;
     }
 
@@ -44,5 +44,5 @@ public class Pronostico {
 
     public int getIdEquipo2() {
         return idEquipo2;
-    }
+    }*/
 }

@@ -38,14 +38,15 @@ public class LectorDeArchivos {
 
             Partido partido = new Partido(id, idEquipo1, idEquipo2, nombreEquipo1, nombreEquipo2, golesEquipo1, golesEquipo2);
 
-            if (ronda==buscarRondaPorId(listaDeRondas, ronda).getId()) {
-                buscarRondaPorId(listaDeRondas, ronda).agregarPartido(partido);
-            }
-            else {
+            if (buscarRondaPorId(listaDeRondas, ronda) == null) {
                 ArrayList<Partido> listaDePartidos = new ArrayList<>();
                 Ronda unaronda = new Ronda(ronda, listaDePartidos);
                 unaronda.agregarPartido(partido);
+                listaDeRondas.add(unaronda);
+            } else {
+                buscarRondaPorId(listaDeRondas, ronda).agregarPartido(partido);
             }
+
         }
         reader1.close();
         return listaDeRondas;
@@ -57,7 +58,7 @@ public class LectorDeArchivos {
                 return ronda;
             }
         }
-        throw new IllegalArgumentException("No se encontró ninguna ronda con el id " + id); // si no encuentra la ronda...
+        return null; // si no encuentra la ronda...
     }
 
     public static Persona buscarPersonaPorId(ArrayList<Persona> personas, int id) { // método que busca persona
@@ -86,19 +87,20 @@ public class LectorDeArchivos {
             Partido partido = buscarPartidoPorId(listaDePartidos, idpartido);
             Pronostico pronostico = new Pronostico(partido, idGanador);
 
-            if (idpersona==buscarPersonaPorId(listaDePersonas, idpersona).getId()) {
-                buscarPersonaPorId(listaDePersonas, idpersona).agregarPronostico(pronostico);
-            }
-            else {
+            if (buscarPersonaPorId(listaDePersonas, idpersona) == null) {
                 ArrayList<Pronostico> listaDePronosticos = new ArrayList<>();
                 Persona persona = new Persona(idpersona, nombrepersona, listaDePronosticos);
                 persona.agregarPronostico(pronostico);
                 listaDePersonas.add(persona);
+            } else {
+                buscarPersonaPorId(listaDePersonas, idpersona).agregarPronostico(pronostico);
             }
+
         }
 
         reader.close();
         return listaDePersonas;
+
     }
 
     private static Partido buscarPartidoPorId(Collection<Partido> partidos, int id) { // metodo que busca partido por id
