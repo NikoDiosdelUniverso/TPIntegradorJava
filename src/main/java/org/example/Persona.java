@@ -46,4 +46,8 @@ public class Persona {
 
         this.listadepronosticos.add(pronostico);
     }
+
+    public void setPuntajeTotal(int puntajeDelaRonda) {
+        this.puntaje += puntajeDelaRonda;
+    }
 }

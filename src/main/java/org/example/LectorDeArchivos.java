@@ -2,10 +2,9 @@ package org.example;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.lang.reflect.Array;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 public class LectorDeArchivos {
 
@@ -17,7 +16,7 @@ public class LectorDeArchivos {
         this.pronostico = pronostico;
     }
 
-    public ArrayList<Ronda> leerResultados() { //método
+    public ArrayList<Ronda> leerResultados() throws IOException { //método
 
         ArrayList<Ronda> listaDeRondas = new ArrayList<>(); // crea lista de rondas vacía
 
@@ -28,8 +27,8 @@ public class LectorDeArchivos {
 
         while ((linea = reader1.readLine()) != null) {
             String[] partes = linea.split(",");
-            int ronda = Integer.parseInt(parts[0]);
-            int id = Integer.parseInt(partes[1]); // se usa integer pq todo lo que se lee es string, transforma el string en un int
+            int ronda = Integer.parseInt(partes[0]);
+            int id = Integer.parseInt(partes[1]); // se usa integer pqtodo lo que se lee es string, transforma el string en un int
             int idEquipo1 = Integer.parseInt(partes[2]);
             String nombreEquipo1 = partes[3];
             int golesEquipo1 = Integer.parseInt(partes[4]);
@@ -61,16 +60,16 @@ public class LectorDeArchivos {
         throw new IllegalArgumentException("No se encontró ninguna ronda con el id " + id); // si no encuentra la ronda...
     }
 
-    private static Persona buscarPersonaPorId(ArrayList<Persona> personas, int id) { // método que busca persona
+    public static Persona buscarPersonaPorId(ArrayList<Persona> personas, int id) { // método que busca persona
         for (Persona persona : personas) { // Persona = clase , persona = elemento : personas = lista -> por cada persona de personas hacer...
             if (persona.getId() == id) {
                 return persona;
             }
         }
-        throw new IllegalArgumentException("No se encontró ninguna persona con el id " + id); // si no encuentra la persona...
+        return null;
     }
 
-    public ArrayList<Persona> leerpronostico(ArrayList<Partido> listaDePartidos) {
+    public ArrayList<Persona> leerpronostico(ArrayList<Partido> listaDePartidos) throws IOException {
 
         ArrayList<Persona> listaDePersonas = new ArrayList<>(); // crea lista de personas vacía
 
