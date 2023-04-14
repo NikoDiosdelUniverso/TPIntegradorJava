@@ -30,19 +30,4 @@ public class Pronostico {
         return puntos;
     }
 
-/*    public int getId() {
-        return id;
-    }
-
-    public int getIdEquipo1() {
-        return idEquipo1;
-    }
-
-    public int getIdGanador() {
-        return idGanador;
-    }
-
-    public int getIdEquipo2() {
-        return idEquipo2;
-    }*/
 }

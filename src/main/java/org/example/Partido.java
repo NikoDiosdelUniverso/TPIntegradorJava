@@ -14,16 +14,16 @@ public class Partido {
 
     private Equipo equipo2;
 
-    public Partido(int id, int idEquipo1, int idEquipo2, String nombreEquipo1, String nombreEquipo2, int golesEquipo1, int golesEquipo2) {
+    public Partido(int id, Equipo equipo1, Equipo equipo2, int golesEquipo1, int golesEquipo2) {
         this.id = id;
-        this.idEquipo1 = idEquipo1;
-        this.idEquipo2 = idEquipo2;
-        this.nombreEquipo1 = nombreEquipo1;
-        this.nombreEquipo2 = nombreEquipo2;
+        this.equipo1 = equipo1;
+        this.equipo2 = equipo2;
+        this.idEquipo1 = equipo1.getId();
+        this.idEquipo2 = equipo2.getId();
+        this.nombreEquipo1 = equipo1.getNombre();
+        this.nombreEquipo2 = equipo2.getNombre();
         this.golesEquipo1 = golesEquipo1;
         this.golesEquipo2 = golesEquipo2;
-        this.equipo1 = new Equipo(idEquipo1, nombreEquipo1);
-        this.equipo2 = new Equipo(idEquipo2, nombreEquipo2);
     }
 
     public int getId() {
@@ -48,4 +48,11 @@ public class Partido {
         }
     }
 
+    public Equipo getEquipo1() {
+        return equipo1;
+    }
+
+    public Equipo getEquipo2() {
+        return equipo2;
+    }
 }
