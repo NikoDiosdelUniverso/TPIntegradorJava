@@ -46,7 +46,7 @@ public class LectorDeArchivos {
         return null;
     }
 
-    // Agrega un pronostico a la persona. Si la persona no existe, la crea y la agrega a la lista de personas.
+    // Agrega un pronóstico a la persona. Si la persona no existe, la crea y la agrega a la lista de personas.
     private void agregarPersonas(ArrayList<Persona> listaDePersonas, int idpersona, String nombrepersona, Pronostico pronostico) {
         if (buscarPersonaPorId(listaDePersonas, idpersona) == null) {
             ArrayList<Pronostico> listaDePronosticos = new ArrayList<>();
@@ -78,7 +78,7 @@ public class LectorDeArchivos {
         return null;
     }
 
-    // Crea un equipo con los parametros dados solo si no existe, y lo agrega a la lista dada. Devuelve el equipo.
+    // Crea un equipo con los parámetros dados solo si no existe y lo agrega a la lista dada. Devuelve el equipo.
     private static Equipo agregarEquipos(ArrayList<Equipo> listaDeEquipos, int id, String nombre) {
         if (buscarEquipoPorId(listaDeEquipos, id) == null) {
             Equipo equipo = new Equipo(id, nombre);
