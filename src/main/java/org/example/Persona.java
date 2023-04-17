@@ -7,7 +7,6 @@ public class Persona {
     private int id; // atributo
     private String nombre; // atributo
     private ArrayList<Pronostico> listaDePronosticos; //atributo
-    private int puntaje; // atributo
 
     public Persona(int id, String nombre, ArrayList<Pronostico> pronosticos) { // constructor
         this.id = id;
@@ -32,17 +31,8 @@ public class Persona {
         return nombre;
     }
 
-
-    public int getPuntaje() {
-        return puntaje;
-    }
-
-
     public void agregarPronostico (Pronostico pronostico){
         this.listaDePronosticos.add(pronostico);
     }
 
-    public void setPuntajeTotal(int puntajeDelaRonda) {
-        this.puntaje += puntajeDelaRonda;
-    }
 }

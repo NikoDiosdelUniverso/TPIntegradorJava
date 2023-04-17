@@ -53,9 +53,8 @@ public class Main {
         System.out.println("------------------------------");
         System.out.println("Puntajes totales:");
         for (Persona persona : listaDePersonas) { // por cada persona de la lista personas
-            persona.setPuntajeTotal(persona.puntosPersona());
             // muestra el nombre de la persona con su respectivo puntaje
-            System.out.printf("%s : %d \n", persona.getNombre(), persona.getPuntaje());
+            System.out.printf("%s : %d \n", persona.getNombre(), persona.puntosPersona());
         }
     }
 }
