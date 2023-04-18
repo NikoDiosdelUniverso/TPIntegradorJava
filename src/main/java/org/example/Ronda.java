@@ -1,5 +1,6 @@
 package org.example;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Ronda {
 
@@ -22,5 +23,13 @@ public class Ronda {
     public void agregarPartido (Partido partido){
 
         this.listaDePartidos.add(partido);
+    }
+    public Partido buscarPartidoPorId(int id) { // metodo que busca partido por id
+        for (Partido partido : this.listaDePartidos) { // Partido = clase , partido = elemento : partidos = lista -> por cada partido de partidos hacer
+            if (partido.getId() == id) {
+                return partido;
+            }
+        }
+        return null; // si no encuentra el partido
     }
 }
