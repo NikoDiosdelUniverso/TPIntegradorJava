@@ -14,20 +14,28 @@ public class Main {
         }
 
         //el primer argumento debe ser la ruta de resultados, el segundo debe ser la ruta de pronósticos
-        LectorDeArchivos lector = new LectorDeArchivos(args[0], args[1]); // creando instancia de la clase "lector de archivos"
-
-        ArrayList<Ronda> listaDeRondas = lector.leerResultados(); // usando el método leer resultados
+        LectorDeArchivos lector = new LectorDeArchivos(args[0]); // creando instancia de la clase "lector de archivos"
+        lector.leerResultados();
+        ArrayList<Fase> fases = lector.getListaDeFases();
+        LectorDB lectordb = new LectorDB(args[1]);
+        lectordb.LeerPronostico(fases);
+        ArrayList<Persona> personas = lectordb.getListaDePersonas();
 
         //imprimir partidos del archivo resultados.csv
         System.out.println("Partidos:");
-        for (Ronda ronda : listaDeRondas) {
-            System.out.println("Ronda: " + ronda.getId());
-            for (Partido partido : ronda.getListaDePartidos()) {
-                System.out.println("Partido " + partido.getId() + ": " + partido.getEquipo1().getNombre() + " vs " + partido.getEquipo2().getNombre());
+        for (Fase fase : fases){
+            System.out.println("Fase: " + fase.getId());
+            for (Ronda ronda : fase.getListaDeRondas()) {
+                System.out.println("Ronda: " + ronda.getId());
+                for (Partido partido : ronda.getListaDePartidos()) {
+                    System.out.println("Partido " + partido.getId() + ": " + partido.getEquipo1().getNombre() + " vs " + partido.getEquipo2().getNombre());
+                }
             }
         }
         System.out.println("---------------------------");
 
+
+        /*
         //agregar los partidos de cada ronda a una lista de partidos
         ArrayList<Partido> listaDePartidos = new ArrayList<>();
         for (Ronda ronda : listaDeRondas ) {
@@ -57,5 +65,7 @@ public class Main {
             // muestra el nombre de la persona con su respectivo puntaje
             System.out.printf("%s : %d \n", persona.getNombre(), persona.getPuntaje());
         }
+
+        */
     }
 }

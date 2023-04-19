@@ -1,5 +1,6 @@
 package org.example;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.sql.*;
 import java.util.Collection;
@@ -24,10 +25,11 @@ public class LectorDB {
         this.ListaDePersonas = new ArrayList<>();
     }
 
-    public void LeerPronostico (ArrayList<Fase>ListaDeFases) {
+    public void LeerPronostico (ArrayList<Fase>ListaDeFases) throws IOException {
         Connection conexion = null;
         Statement consulta = null;
         ConectorSQL conector = new ConectorSQL(rutaConfiguracion);
+        conector.leerconfiguracion();
         try {
             conexion = DriverManager.getConnection(conector.getUrl(), conector.getUsuario(), conector.getContrasenia());
             // Ejecutar una consulta
