@@ -1,2 +1,2 @@
 ﻿usuario;contrasenia;driver;url
-root;sql2023;com.mysql.jdbc.Driver;jdbc:mysql://localhost:3306/pronosticos
+root;12345;com.mysql.jdbc.Driver;jdbc:mysql://localhost:3306/pronosticos

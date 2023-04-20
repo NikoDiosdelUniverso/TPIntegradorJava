@@ -7,7 +7,8 @@ public class Persona {
     private int id; // atributo
     private String nombre; // atributo
     private ArrayList<Pronostico> listaDePronosticos; //atributo
-    private int puntaje; // atributo
+
+    private int puntaje;
 
     public Persona(int id, String nombre, ArrayList<Pronostico> pronosticos) { // constructor
         this.id = id;
@@ -15,11 +16,11 @@ public class Persona {
         this.listaDePronosticos = pronosticos;
     }
 
-    public int puntosPersona (){
+    public int puntosPersona (int puntosPorPartido){
         int puntos=0;
 
         for (Pronostico pronostico : listaDePronosticos) {
-            puntos += pronostico.Puntos();
+            puntos += pronostico.Puntos() * puntosPorPartido;
         }
         return puntos;
     }
@@ -33,16 +34,25 @@ public class Persona {
     }
 
 
-    public int getPuntaje() {
-        return puntaje;
-    }
-
-
     public void agregarPronostico (Pronostico pronostico){
         this.listaDePronosticos.add(pronostico);
     }
 
-    public void setPuntajeTotal(int puntajeDelaRonda) {
-        this.puntaje += puntajeDelaRonda;
+    //metodo buscar pronostico por partido
+    public Pronostico buscarPronostico(Partido partido) {
+        for (Pronostico p: listaDePronosticos){
+            if(p.getPartido().getId() == partido.getId()) {
+                return p;
+            }
+        }
+        return null;
+    }
+
+    public int getPuntaje() {
+        return puntaje;
+    }
+
+    public void addPuntaje(int puntaje) {
+        this.puntaje += puntaje;
     }
 }

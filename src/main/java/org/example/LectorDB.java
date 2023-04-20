@@ -31,15 +31,15 @@ public class LectorDB {
         ConectorSQL conector = new ConectorSQL(rutaConfiguracion);
         conector.leerconfiguracion();
         try {
+            conexion = DriverManager.getConnection(conector.getUrl(), conector.getUsuario(), conector.getContrasenia());
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(conector.getUrl(), conector.getUsuario(), conector.getContrasenia());
-            Statement stmt = con.createStatement();
+            consulta = conexion.createStatement();
             // Ejecutar una consulta
             String sql;
-            sql = "SELECT id, fase, ronda, partido, equipo1, ganador, equipo2, persona FROM pronosticos";
+            sql = "SELECT id, fase, ronda, partido, equipo1, ganador, equipo2, persona, idpersona FROM pronosticos";
 
             //En la variable resultado obtendremos las distintas filas que nos devolvió la base
-            ResultSet resultado = stmt.executeQuery(sql);
+            ResultSet resultado = consulta.executeQuery(sql);
 
             // Obtener las distintas filas de la consulta
             while (resultado.next()) {
@@ -61,8 +61,8 @@ public class LectorDB {
                 agregarPersonas(idpersona, persona, pronostico);
             }
             // Esto se utiliza par cerrar la conexión con la base de datos
-            // resultado.close();
-            //consulta.close();
+            resultado.close();
+            consulta.close();
             conexion.close();
 
         } catch ( // Excepción ante problemas de conexión
