@@ -38,7 +38,9 @@ private static void calcularPuntaje(ArrayList<Persona> personas, ArrayList<Fase>
                 //para cada persona, si el puntaje de la ronda es igual a la cantidad de partidos, sumar puntos extra
                 for (Partido partido : ronda.getListaDePartidos()){
                     //suma los puntos de cada partido de la ronda
-                    puntajeDeLaRonda += p.buscarPronostico(partido).Puntos();
+                    if(p.buscarPronostico(partido) != null){
+                        puntajeDeLaRonda += p.buscarPronostico(partido).Puntos();
+                    }
                 }
                 if(puntajeDeLaRonda == ronda.getListaDePartidos().size()){
                     puntosExtra += puntosRonda;
@@ -100,22 +102,10 @@ private static void calcularPuntaje(ArrayList<Persona> personas, ArrayList<Fase>
         //imprimir los puntajes totales
       calcularPuntaje(personas,fases, args[2]);
 
-        //todo: metodo calcular puntaje
-        //agregar partidos, personas, etc
+        // metodo calcular puntaje (listo)
+        //agregar partidos, personas, (listo)
         //excepciones
         //test
 
-
-
-
-        /*
-        System.out.println("------------------------------");
-        System.out.println("Puntajes totales:");
-        for (Persona persona : listaDePersonas) { // por cada persona de la lista personas
-            persona.setPuntajeTotal(persona.puntosPersona());
-            // muestra el nombre de la persona con su respectivo puntaje
-            System.out.printf("%s : %d \n", persona.getNombre(), persona.getPuntaje());
-        }
-        */
     }
 }

@@ -4,3 +4,9 @@
 1,1,3,1,Argentina,2,0,4,México
 1,2,4,3,Polonia,4,1,2,Arabia Saudita
 1,2,5,2,Arabia Saudita,1,1,4,México
+2,3,6,5,Italia,2,4,6,Rusia
+2,3,7,7,Holanda,3,1,8,Japon
+2,3,8,5,Italia,3,0,8,Japon
+2,4,9,6,Rusia,1,2,7,Holanda
+2,4,10,8,Japon,3,1,6,Rusia
+2,4,11,7,Holanda,5,3,5,Italia
