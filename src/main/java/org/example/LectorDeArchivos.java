@@ -4,22 +4,23 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class LectorDeArchivos {
 
     private String resultado; // atributo
-    private String pronostico; //atributo
     private ArrayList<Equipo> ListaDeEquipos; // atributo
     private ArrayList<Fase> ListaDeFases; // atributo
     private ArrayList<Ronda> ListaDeRondas; // atributo
 
-    public LectorDeArchivos(String resultado, String pronostico) { //constructor
+    public LectorDeArchivos(String resultado) { //constructor
         this.resultado = resultado;
-        this.pronostico = pronostico;
         this.ListaDeEquipos = new ArrayList<>();
         this.ListaDeFases = new ArrayList<>();
         this.ListaDeRondas = new ArrayList<>();
+    }
+
+    public ArrayList<Fase> getListaDeFases() { //getter
+        return ListaDeFases;
     }
 
     private Ronda buscarRondaPorId(int id) { // método que busca ronda
@@ -83,7 +84,7 @@ public class LectorDeArchivos {
         }
         return BuscarFase(id);
     }
-    public void leerResultados() throws IOException { //método para leer el archivo de resultados
+    public ArrayList<Ronda> leerResultados() throws IOException { //método para leer el archivo de resultados
 
         // Leer el archivo de resultados
         BufferedReader reader1 = new BufferedReader(new FileReader(resultado));
@@ -102,44 +103,18 @@ public class LectorDeArchivos {
             int idEquipo2 = Integer.parseInt(partes[7]);
             String nombreEquipo2 = partes[8];
 
-            Equipo equipo1 = agregarEquipos(idEquipo1, nombreEquipo1);
-            Equipo equipo2 = agregarEquipos(idEquipo2, nombreEquipo2);
+            Equipo equipo1 = agregarEquipos(idEquipo1, nombreEquipo1); // crea los equipos
+            Equipo equipo2 = agregarEquipos(idEquipo2, nombreEquipo2); // crea los equipos
 
-            Partido partido = new Partido(id, equipo1, equipo2, golesEquipo1, golesEquipo2);
+            Partido partido = new Partido(id, equipo1, equipo2, golesEquipo1, golesEquipo2); // crea el partido
 
-            Ronda unaronda = agregarRondas(ronda, partido);
+            Ronda unaronda = agregarRondas(ronda, partido); // agrega los partidos a la ronda
 
             Fase unafase = AgregarFase(fase);
 
             unafase.agregarRondaALaFase(unaronda);
-            ListaDeFases.add(unafase);
-
         }
         reader1.close();
+        return null;
     }
-
-
-   /* public ArrayList<Persona> leerPronostico(ArrayList<Partido> listaDePartidos) throws IOException {
-        ArrayList<Persona> listaDePersonas = new ArrayList<>(); // crea lista de personas vacía
-
-        BufferedReader reader = new BufferedReader(new FileReader(pronostico));
-        reader.readLine();
-        String line;
-        while ((line = reader.readLine()) != null) {
-            String[] parts = line.split(",");
-            int idpersona = Integer.parseInt(parts[0]);
-            String nombrepersona = parts[1];
-            int idpartido = Integer.parseInt(parts[2]);
-            int idGanador = Integer.parseInt(parts[4]);
-
-            //si se encuentra el partido, crear el pronostico
-            if (buscarPartidoPorId(listaDePartidos, idpartido) != null) {
-                Partido partido = buscarPartidoPorId(listaDePartidos, idpartido);
-                Pronostico pronostico = new Pronostico(partido, idGanador);
-                agregarPersonas(listaDePersonas, idpersona, nombrepersona, pronostico);
-            }
-        }
-        reader.close();
-        return listaDePersonas;
-    }*/
 }

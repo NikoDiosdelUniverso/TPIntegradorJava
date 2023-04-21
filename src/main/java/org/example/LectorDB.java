@@ -1,5 +1,6 @@
 package org.example;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.sql.*;
 import java.util.Collection;
@@ -24,16 +25,18 @@ public class LectorDB {
         this.ListaDePersonas = new ArrayList<>();
     }
 
-    public void LeerPronostico (ArrayList<Fase>ListaDeFases) {
+    public void LeerPronostico (ArrayList<Fase>ListaDeFases) throws IOException {
         Connection conexion = null;
         Statement consulta = null;
         ConectorSQL conector = new ConectorSQL(rutaConfiguracion);
+        conector.leerconfiguracion();
         try {
             conexion = DriverManager.getConnection(conector.getUrl(), conector.getUsuario(), conector.getContrasenia());
-            // Ejecutar una consulta
+            Class.forName("com.mysql.cj.jdbc.Driver");
             consulta = conexion.createStatement();
+            // Ejecutar una consulta
             String sql;
-            sql = "SELECT id, fase, ronda, partido, equipo1, ganador, equipo1, persona FROM pronostico";
+            sql = "SELECT id, fase, ronda, partido, equipo1, ganador, equipo2, persona, idpersona FROM pronosticos";
 
             //En la variable resultado obtendremos las distintas filas que nos devolvió la base
             ResultSet resultado = consulta.executeQuery(sql);
@@ -63,7 +66,7 @@ public class LectorDB {
             conexion.close();
 
         } catch ( // Excepción ante problemas de conexión
-    SQLException se) {
+                SQLException | ClassNotFoundException se) {
 
         se.printStackTrace();
     } finally {

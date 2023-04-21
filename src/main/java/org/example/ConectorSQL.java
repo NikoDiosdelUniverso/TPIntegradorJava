@@ -36,7 +36,7 @@ public class ConectorSQL {
         BufferedReader reader = new BufferedReader(new FileReader(rutaconfiguracion));
         reader.readLine(); // ignora el encabezado
         String linea; while ((linea = reader.readLine()) != null) {
-            String[] partes = linea.split(",");
+            String[] partes = linea.split(";");
             this.usuario = partes[0];
             this.contrasenia = partes[1];
             this.driver = partes[2];

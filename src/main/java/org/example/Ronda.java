@@ -24,7 +24,7 @@ public class Ronda {
 
         this.listaDePartidos.add(partido);
     }
-    public Partido buscarPartidoPorId(int id) { // metodo que busca partido por id
+    public Partido buscarPartidoPorId(int id) { // método que busca partido por Id
         for (Partido partido : this.listaDePartidos) { // Partido = clase , partido = elemento : partidos = lista -> por cada partido de partidos hacer
             if (partido.getId() == id) {
                 return partido;

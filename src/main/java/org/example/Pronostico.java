@@ -11,6 +11,10 @@ public class Pronostico {
 
     private int idEquipo2;
 
+    public Partido getPartido() {
+        return partido;
+    }
+
     private Partido partido;
 
     public Pronostico(Partido partido, int ganador){

@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b74ecf8-7470-4735-84e2-402af24c4e10" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ConectorSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ConectorSQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LectorDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LectorDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pronostico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pronostico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configuracionDB.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configuracionDB.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/congiguracion_puntos.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configuracionPuntos.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +67,7 @@
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="TrabajoPractico" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;src/main/resources/resultados.csv&quot; &quot;src/main/resources/pronostico.csv&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;src/main/resources/resultados.csv&quot; &quot;src/main/resources/configuracionDB.csv&quot; &quot;src/main/resources/configuracionPuntos.csv&quot;" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
