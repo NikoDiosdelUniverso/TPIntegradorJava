@@ -37,8 +37,10 @@ private static void calcularPuntaje(ArrayList<Persona> personas, ArrayList<Fase>
                 int puntajeDeLaRonda = 0;
                 //para cada persona, si el puntaje de la ronda es igual a la cantidad de partidos, sumar puntos extra
                 for (Partido partido : ronda.getListaDePartidos()){
-                    //suma los puntos de cada partido de la ronda
-                    puntajeDeLaRonda += p.buscarPronostico(partido).Puntos();
+                    //si existe un pronostico del partido, suma los puntos de cada partido de la ronda
+                    if(p.buscarPronostico(partido) != null){
+                        puntajeDeLaRonda += p.buscarPronostico(partido).Puntos();
+                    }
                 }
                 if(puntajeDeLaRonda == ronda.getListaDePartidos().size()){
                     puntosExtra += puntosRonda;
@@ -59,6 +61,7 @@ private static void calcularPuntaje(ArrayList<Persona> personas, ArrayList<Fase>
         persona.addPuntaje(persona.puntosPersona(puntosPartido));
         System.out.println(persona.getNombre()+": "+persona.getPuntaje());
     }
+    //ordenar por puntaje
 }
 
     public static void main(String[] args) throws IOException { // main que se ejecuta
@@ -100,21 +103,9 @@ private static void calcularPuntaje(ArrayList<Persona> personas, ArrayList<Fase>
         //imprimir los puntajes totales
       calcularPuntaje(personas,fases, args[2]);
 
-        //todo: metodo calcular puntaje
-        //agregar partidos, personas, etc
-        //excepciones
-        //test
 
+        //todo: excepciones
+        //todo: test
 
-
-
-        /*
-        System.out.println("------------------------------");
-        System.out.println("Puntajes totales:");
-        for (Persona persona : listaDePersonas) { // por cada persona de la lista personas
-            // muestra el nombre de la persona con su respectivo puntaje
-            System.out.printf("%s : %d \n", persona.getNombre(), persona.puntosPersona());
-        }
-        */
     }
 }

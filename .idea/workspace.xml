@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b74ecf8-7470-4735-84e2-402af24c4e10" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
+    <list default="true" id="9ec0839b-6ad3-451e-b28a-0a18bfee41e9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ConectorSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ConectorSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LectorDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LectorDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pronostico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pronostico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/configuracionDB.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configuracionDB.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/congiguracion_puntos.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configuracionPuntos.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +75,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6b74ecf8-7470-4735-84e2-402af24c4e10" name="Changes" comment="" />
+      <changelist id="9ec0839b-6ad3-451e-b28a-0a18bfee41e9" name="Changes" comment="" />
       <created>1679207171487</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
