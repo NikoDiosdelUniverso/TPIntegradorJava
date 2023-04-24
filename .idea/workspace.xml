@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ec0839b-6ad3-451e-b28a-0a18bfee41e9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/scrip data base(completo).sql" beforeDir="false" afterPath="$PROJECT_DIR$/scrip data base(completo).sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PartidoExistenteExepcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configuracionDB.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configuracionDB.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/resultados.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/resultados.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
