@@ -7,9 +7,9 @@ public class Ronda {
     private int id; // atributo
     private ArrayList<Partido> listaDePartidos; //atributo
 
-    public Ronda(int id, ArrayList<Partido> listadepartidos) { // constructor
+    public Ronda(int id) { // constructor
         this.id = id;
-        this.listaDePartidos = listadepartidos;
+        this.listaDePartidos = new ArrayList<>();
     }
 
     public int getId() {

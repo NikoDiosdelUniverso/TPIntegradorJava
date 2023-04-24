@@ -105,7 +105,7 @@ private static void calcularPuntaje(ArrayList<Persona> personas, ArrayList<Fase>
         // metodo calcular puntaje (listo)
         //agregar partidos, personas, (listo)
         //excepciones
-        //test
+        //test (listo)
 
     }
 }

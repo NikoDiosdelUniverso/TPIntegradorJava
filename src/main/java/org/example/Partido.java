@@ -26,6 +26,13 @@ public class Partido {
         this.golesEquipo2 = golesEquipo2;
     }
 
+    public boolean tieneequipos (String nombreEquipo1, String nombreEquipo2){
+        return ((this.nombreEquipo1.equals(nombreEquipo1) && this.nombreEquipo2.equals(nombreEquipo2)) || (this.nombreEquipo1.equals(nombreEquipo2) && this.nombreEquipo2.equals(nombreEquipo1)));
+    }
+    public boolean esigual (Partido partido){
+        return (partido.id == this.id || partido.tieneequipos(this.nombreEquipo1, this.nombreEquipo2));
+    }
+
     public int getId() {
         return id;
     }

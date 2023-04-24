@@ -38,7 +38,7 @@ public class Persona {
         this.listaDePronosticos.add(pronostico);
     }
 
-    //metodo buscar pronostico por partido
+    //método buscar pronostico por partido
     public Pronostico buscarPronostico(Partido partido) {
         for (Pronostico p: listaDePronosticos){
             if(p.getPartido().getId() == partido.getId()) {

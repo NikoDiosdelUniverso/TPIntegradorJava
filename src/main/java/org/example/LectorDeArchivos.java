@@ -11,6 +11,7 @@ public class LectorDeArchivos {
     private ArrayList<Equipo> ListaDeEquipos; // atributo
     private ArrayList<Fase> ListaDeFases; // atributo
     private ArrayList<Ronda> ListaDeRondas; // atributo
+    private ArrayList<Partido> ListaDePartidos; // atributo
 
     public LectorDeArchivos(String resultado) { //constructor
         this.resultado = resultado;
@@ -35,8 +36,7 @@ public class LectorDeArchivos {
     // Agrega un partido a una ronda. Si la ronda no existe, la crea y la agrega a la lista de rondas.
     private Ronda agregarRondas(int ronda, Partido partido) {
         if (buscarRondaPorId(ronda) == null) {
-            ArrayList<Partido> listaDePartidos = new ArrayList<>();
-            Ronda unaronda = new Ronda(ronda, listaDePartidos);
+            Ronda unaronda = new Ronda(ronda);
             unaronda.agregarPartido(partido);
             this.ListaDeRondas.add(unaronda);
             return unaronda;
@@ -84,6 +84,19 @@ public class LectorDeArchivos {
         }
         return BuscarFase(id);
     }
+
+    public void agregarpartido (Partido parti2) throws PartidoExistenteExepcion {
+        if (this.ListaDePartidos == null){
+            ListaDePartidos = new ArrayList<>();
+        }
+        for (Partido partido : this.ListaDePartidos){
+            if (partido.esigual(parti2)){
+                throw new PartidoExistenteExepcion("ya existe el partido");
+            }
+        }
+        ListaDePartidos.add(parti2);
+    }
+
     public ArrayList<Ronda> leerResultados() throws IOException { //método para leer el archivo de resultados
 
         // Leer el archivo de resultados
@@ -107,6 +120,12 @@ public class LectorDeArchivos {
             Equipo equipo2 = agregarEquipos(idEquipo2, nombreEquipo2); // crea los equipos
 
             Partido partido = new Partido(id, equipo1, equipo2, golesEquipo1, golesEquipo2); // crea el partido
+
+            try {
+                agregarpartido(partido);
+            } catch (PartidoExistenteExepcion e){
+                System.out.println(e.getMessage());
+            }
 
             Ronda unaronda = agregarRondas(ronda, partido); // agrega los partidos a la ronda
 
