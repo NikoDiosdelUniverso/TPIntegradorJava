@@ -107,8 +107,7 @@ public class LectorDB {
     // Agrega un pronóstico a la persona. Si la persona no existe, la crea y la agrega a la lista de personas.
     private void agregarPersonas(int idpersona, String nombrepersona, Pronostico pronostico) {
         if (buscarPersonaPorId(idpersona) == null) {
-            ArrayList<Pronostico> listaDePronosticos = new ArrayList<>();
-            Persona persona = new Persona(idpersona, nombrepersona, listaDePronosticos);
+            Persona persona = new Persona(idpersona, nombrepersona);
             persona.agregarPronostico(pronostico);
             this.ListaDePersonas.add(persona);
         } else {

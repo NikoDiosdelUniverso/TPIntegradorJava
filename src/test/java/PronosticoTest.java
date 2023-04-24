@@ -23,7 +23,7 @@ public class PronosticoTest {
 
     @Test
 
-    public void aciertapronostico (){
+    public void aciertaPronostico(){
 
         this.pronostico = new Pronostico(this.partido, 1);
 
@@ -33,7 +33,7 @@ public class PronosticoTest {
 
     @Test
 
-    public  void fallapronostico (){
+    public  void fallaPronostico(){
 
         this.pronostico = new Pronostico(this.partido, 2);
         this.pronostico1 = new Pronostico (this.partido,0);

@@ -11,6 +11,7 @@ public class LectorDeArchivos {
     private ArrayList<Equipo> ListaDeEquipos; // atributo
     private ArrayList<Fase> ListaDeFases; // atributo
     private ArrayList<Ronda> ListaDeRondas; // atributo
+    private ArrayList<Partido> listaDePartidos;
 
     public LectorDeArchivos(String resultado) { //constructor
         this.resultado = resultado;
@@ -33,10 +34,9 @@ public class LectorDeArchivos {
     }
 
     // Agrega un partido a una ronda. Si la ronda no existe, la crea y la agrega a la lista de rondas.
-    private Ronda agregarRondas(int ronda, Partido partido) {
+    private Ronda agregarRondas(int ronda, Partido partido) throws PartidoYaExisteException {
         if (buscarRondaPorId(ronda) == null) {
-            ArrayList<Partido> listaDePartidos = new ArrayList<>();
-            Ronda unaronda = new Ronda(ronda, listaDePartidos);
+            Ronda unaronda = new Ronda(ronda);
             unaronda.agregarPartido(partido);
             this.ListaDeRondas.add(unaronda);
             return unaronda;
@@ -66,24 +66,38 @@ public class LectorDeArchivos {
             return buscarEquipoPorId(id);
         }
     }
-    public Fase BuscarFase (int id){ // método para buscar fase por id
-        for (Fase f : ListaDeFases){
-            if (f.getId() == id){
+
+    public Fase BuscarFase(int id) { // método para buscar fase por id
+        for (Fase f : ListaDeFases) {
+            if (f.getId() == id) {
                 return f;
             }
         }
         return null;
     }
 
-    public Fase AgregarFase (int id){ //método para agregar fase
+    public Fase AgregarFase(int id) { //método para agregar fase
 
-        if (BuscarFase(id)==null){
+        if (BuscarFase(id) == null) {
             Fase fase = new Fase(id);
             this.ListaDeFases.add(fase);
             return fase;
         }
         return BuscarFase(id);
     }
+
+    public void agregarPartido(Partido p) throws PartidoYaExisteException {
+        if (this.listaDePartidos == null) {
+            listaDePartidos = new ArrayList<>();
+        }
+        for (Partido partido : this.listaDePartidos) {
+            if (partido.esIgual(p)) {
+                throw new PartidoYaExisteException();
+            }
+        }
+            this.listaDePartidos.add(p);
+    }
+
     public ArrayList<Ronda> leerResultados() throws IOException { //método para leer el archivo de resultados
 
         // Leer el archivo de resultados
@@ -107,12 +121,17 @@ public class LectorDeArchivos {
             Equipo equipo2 = agregarEquipos(idEquipo2, nombreEquipo2); // crea los equipos
 
             Partido partido = new Partido(id, equipo1, equipo2, golesEquipo1, golesEquipo2); // crea el partido
+            try {
+                agregarPartido(partido);
+                Ronda unaronda = agregarRondas(ronda, partido); // agrega los partidos a la ronda
 
-            Ronda unaronda = agregarRondas(ronda, partido); // agrega los partidos a la ronda
+                Fase unafase = AgregarFase(fase);
 
-            Fase unafase = AgregarFase(fase);
-
-            unafase.agregarRondaALaFase(unaronda);
+                unafase.agregarRondaALaFase(unaronda);
+            } catch (PartidoYaExisteException e) {
+                System.out.println("Ya existe el partido con los equipos " + nombreEquipo1 + " y " + nombreEquipo2);
+                e.printStackTrace();
+            }
         }
         reader1.close();
         return null;

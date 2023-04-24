@@ -10,10 +10,10 @@ public class Persona {
 
     private int puntaje;
 
-    public Persona(int id, String nombre, ArrayList<Pronostico> pronosticos) { // constructor
+    public Persona(int id, String nombre) { // constructor
         this.id = id;
         this.nombre = nombre;
-        this.listaDePronosticos = pronosticos;
+        this.listaDePronosticos = new ArrayList<>();
     }
 
     public int puntosPersona (int puntosPorPartido){

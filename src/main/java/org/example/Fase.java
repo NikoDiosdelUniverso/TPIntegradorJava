@@ -32,5 +32,17 @@ public class Fase {
         }
         return null;
     }
+
+/*    public ArrayList<Partido> buscarPartidosPorEquipo(Equipo equipo){
+        ArrayList<Partido> partidos = new ArrayList<>();
+        for (Ronda r : this.ListaDeRondas){
+            if (r.buscarPartidoPorEquipo(equipo) != null){
+                partidos.add(r.buscarPartidoPorEquipo(equipo));
+                System.out.println("partido del equipo "+ equipo.getNombre() + " encontrado en la ronda " + this.getId()+ " "+ r.buscarPartidoPorEquipo(equipo).getEquipo1().getNombre() + " vs " + r.buscarPartidoPorEquipo(equipo).getEquipo2().getNombre());
+            }
+            else System.out.println("partido del equipo "+ equipo.getNombre() + " no encontrado en la ronda " + this.getId());
+        }
+        return partidos;
+    }*/
 }
 

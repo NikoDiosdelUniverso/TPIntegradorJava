@@ -1,15 +1,14 @@
 package org.example;
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class Ronda {
 
     private int id; // atributo
     private ArrayList<Partido> listaDePartidos; //atributo
 
-    public Ronda(int id, ArrayList<Partido> listadepartidos) { // constructor
+    public Ronda(int id) { // constructor
         this.id = id;
-        this.listaDePartidos = listadepartidos;
+        this.listaDePartidos = new ArrayList<>();
     }
 
     public int getId() {
@@ -20,8 +19,16 @@ public class Ronda {
         return listaDePartidos;
     }
 
-    public void agregarPartido (Partido partido){
+    public int cantidadPartidos(){
+        return this.listaDePartidos.size();
+    }
 
+    public void agregarPartido (Partido partido) throws PartidoYaExisteException {
+        for(Partido p: this.listaDePartidos){
+            if(partido.esIgual(p)){
+                throw new PartidoYaExisteException();
+            }
+        }
         this.listaDePartidos.add(partido);
     }
     public Partido buscarPartidoPorId(int id) { // método que busca partido por Id
@@ -32,4 +39,5 @@ public class Ronda {
         }
         return null; // si no encuentra el partido
     }
+
 }

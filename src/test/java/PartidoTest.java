@@ -1,4 +1,4 @@
-import lombok.experimental.StandardException;
+
 import org.example.Equipo;
 import org.example.Partido;
 import org.junit.Before;
@@ -18,24 +18,24 @@ public class PartidoTest {
 
     @Test
 
-    public void ganadorequipo1 (){
+    public void ganadorEquipo1(){
         Partido partido1 = new Partido(1, equipo1, equipo2,2, 0);
 
         assertEquals(partido1.Ganador(), 1); //assertEquals le pasas dos argumentos y verifica que esas cosas sean igual (valor real y valor esperado)
     }
 
     @Test
-    public void ganadorequipo2 (){
+    public void ganadorEquipo2(){
         Partido partido2 = new Partido(1, equipo1, equipo2,1, 3);
 
         assertEquals(partido2.Ganador(), 2); //assertEquals le pasas dos argumentos y verifica que esas cosas sean igual (valor real y valor esperado)
     }
 
     @Test
-    public void empate (){
+    public void ganadorEmpate(){
         Partido partido3 = new Partido(1, equipo1, equipo2,0, 0);
 
-        assertEquals(partido3.Ganador(), 0); //assertEquals le pasas dos argumentos y verifica que esas cosas sean igual (valor real y valor esperado)
+        assertEquals(0, partido3.Ganador()); //assertEquals le pasas dos argumentos y verifica que esas cosas sean igual (valor real y valor esperado)
     }
 
 
