@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ec0839b-6ad3-451e-b28a-0a18bfee41e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/PartidoYaExisteException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Fase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Fase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LectorDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LectorDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LectorDeArchivos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LectorDeArchivos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Partido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Partido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Ronda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Ronda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/configuracionPuntos.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configuracionPuntos.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/resultados.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/resultados.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PartidoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PartidoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PersonaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PersonaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PronosticoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PronosticoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrip data base(completo).sql" beforeDir="false" afterPath="$PROJECT_DIR$/scrip data base(completo).sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
